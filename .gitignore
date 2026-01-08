@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.env
+dist/
+build/
+npm-debug.log
+client/node_modules/
+server/node_modules/
+client/.env
+server/.env
+package-lock.json
+/*.log
