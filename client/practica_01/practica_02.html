@@ -1,34 +1,49 @@
+<!-- ...existing code... -->
 <!DOCTYPE html>
 <html lang="es-MX">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Práctica 01 : eventos</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Práctica: Marcas de motos</title>
     <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Práctica: Marcas de motos</h1>
+    <p class="texto chico">Input + submit → estado → render</p>
 
-    </head>
-    <body>
-        <h1>Práctica 01 : Eventos</h1>
-        <p class = "texto chico">Input + submit > estado > render</p>
-        <section class="panel" >
-                <form id="formulario" no validate>
-                    <label for="textoPregunta">Pregunta:</label>
-                    <textarea id="textoPregunta" rows="3" placeholder="Minimo 10 caracteres"></textarea>
-                    <label for="textoRespuesta">Respuesta correcta:</label>
-                    <input type="text" id="textoRespuesta" placeholder="Escribe la respuesta correcta" required>
-                    <div id="textoError" class="error" role ="alert"></div>
-                    <div class="acciones">
-                        <button type="submit" id="btnAgregarRespuesta">Agregar respuesta</button>
-                        <button type="button" id="btnLimpiarFormulario" class="btnSecundario">Limpiar</button>
-                    </div>
-                  </form>
-       </section>
-         <section class="panelSeparacion">
-                <h2>Lista de preguntas</h2>
-                <ul id="listaPreguntas">
-                    <!-- Lista de preguntas se renderiza aqui -->
-                </ul>
-                <p id="textoVacio" class="texto-chico">Aun no hay preguntas</p>
-            <script src="app.js" defer></script>
-    </body>
+    <section class="panel">
+        <form id="formulario" novalidate>
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" placeholder="Ej. Yamaha">
+
+            <label for="pais">País de origen:</label>
+            <input type="text" id="pais" placeholder="Ej. Japón">
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" rows="3" placeholder="Mínimo 10 caracteres"></textarea>
+
+            <label for="anio">Año de fundación (opcional):</label>
+            <input type="number" id="anio" min="1800" max="2100" placeholder="Ej. 1955">
+
+            <div id="textoError" class="error" role="alert" aria-live="polite" style="display:none;"></div>
+
+            <div class="acciones">
+                <button type="submit" id="btnAgregar">Agregar marca</button>
+                <button type="button" id="btnLimpiarFormulario" class="btnSecundario">Limpiar formulario</button>
+                <button type="button" id="btnLimpiarLista" class="btnSecundario">Limpiar lista</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="panelSeparacion">
+        <h2>Lista de marcas de motos</h2>
+        <ol id="listaMarcas">
+            <!-- lista renderizada aquí -->
+        </ol>
+        <p id="textoVacio" class="texto-chico" aria-live="polite">Aún no hay marcas</p>
+    </section>
+
+    <script src="app.js" defer></script>
+</body>
 </html>
+<!-- ...existing code... -->
