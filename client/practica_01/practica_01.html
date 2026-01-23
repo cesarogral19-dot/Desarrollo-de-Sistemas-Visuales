@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-    <title>Práctica 01 : eventos</title>
+    <head>  
+     <meta charset="UTF-8">
+     <title>Práctica 01 : Eventos</title>   
     </head>
     <body>
-        <h1>Práctica 01 : eventos</h1>
-        <p>cantidad de clics: <span id="contador">0</span></p>
+        <h1>Práctica 01 : Eventos</h1>
+        <p>Cantidad de clicks <span id="contador">0</span></p>
         <button id="btn">Sumar</button>
 
         <script>
-            //dom 
-            //Almacenamineto del estado en modelo minimo
+            //Almacentamiento del estado en modelo minimo
             let contador = 0;
             //Referencia al boton
-            const $contador = document.getElementById('contador');
-            const $btn = document.getElementById('btn');
+            const $contador = document.getElementById("contador");
+            const $btn = document.getElementById("btn");
 
-            //Manejador del evento click > Handler > Estado > UI
-            $btn.addEventListener('click', () => {
+            //Manejador del evento click Evento > Handler > Estado > UI
+            $btn.addEventListener("click", () => {
                 //Actualizar el estado
-                contador++;
+                contador = contador - 1;
+                console.log("Click en el boton");
                 //Actualizar la UI
                 $contador.textContent = contador;
             });
         </script>
-    </body>
+    </body> 
 </html>

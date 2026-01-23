@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-    <meta charset="UTF-8">
-    <title>Layout Web Clásico</title>
-    <link rel="stylesheet" href="estilos_2.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Práctica 04 - CRUD</title>
+
+  <!-- Base primero, específico después (cascada) 🎨 -->
+  <link rel="stylesheet" href="estilos_base.css" />
+  <link rel="stylesheet" href="estilos.css" />
 </head>
+
 <body>
+  <!-- Skip link accesible: salta a la lista en la MISMA página ♿ -->
+  <a class="sr-only sr-only-focusable" href="#listaReactivos">Ir a la lista de reactivos 📋</a>
 
-    <div class="header">
-        <div class="header-left">20% × 100%</div>
-        <div class="header-right">80% × 100%</div>
-    </div>
+  <main class="contenedor">
+    <h1>CRUD - Práctica 04 🧺</h1>
+    <p class="texto-chico">Crear / Editar / Eliminar con delegación de eventos 🫧</p>
 
-    <div class="nav">
-        <div>25% × 100%</div>
-        <div>25% × 100%</div>
-        <div>25% × 100%</div>
-        <div>25% × 100%</div>
-    </div>
+    <section class="panel">
+      <form id="formularioReactivo" novalidate>
+        <label for="textoPregunta">Pregunta</label>
+        <textarea
+          id="textoPregunta"
+          name="textoPregunta"
+          rows="3"
+          placeholder="Mínimo 10 caracteres..."
+          aria-describedby="textoError"
+        ></textarea>
 
-    <div class="main">
-        <!-- ASIDE -->
-        <div class="aside">
-            25% × 100%
-        </div>
+        <label for="textoRespuesta">Respuesta correcta</label>
+        <input
+          type="text"
+          id="textoRespuesta"
+          name="textoRespuesta"
+          placeholder="Obligatoria..."
+          aria-describedby="textoError"
+          autocomplete="off"
+        />
 
-        <div class="content">
-            <div class="content-top">
-                100% × 40%
-            </div>
+        <div id="textoError" class="error" role="alert"></div>
 
-            <div class="content-bottom">
-                <div>50% × 100%</div>
-                <div>50% × 100%</div>
-            </div>
-        </div>
-    </div>
+        <!-- UX: inicia deshabilitado; se habilita al validar ✅ -->
+        <button type="submit" id="btnGuardar" disabled>Guardar</button>
 
-    <div class="footer">
-        <div>50% × 100%</div>
-        <div>25% × 100%</div>
-        <div>25% × 100%</div>
-    </div>
+        <p id="mensaje" class="texto-chico" aria-live="polite">Listo.</p>
+      </form>
+    </section>
 
+    <section class="panel panel-separacion">
+      <h2>Reactivos 📋</h2>
+
+      <ul id="listaReactivos">
+        <!-- Se genera dinámicamente -->
+      </ul>
+
+      <p id="textoVacio" class="texto-chico">Aún no hay reactivos.</p>
+    </section>
+  </main>
+
+  <script src="formulario.js" defer></script>
 </body>
 </html>
