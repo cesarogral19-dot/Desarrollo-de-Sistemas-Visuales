@@ -1,44 +1,86 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
-function App() {
-  const [task, setTask] = useState('')
-  const [tasks, setTasks] = useState<string[]>([])
+type Session = {
+  name: string
+  email: string
+  date: string
+}
 
-  const addTask = () => {
-    if (task.trim() === '') return
-    setTasks([...tasks, task])
-    setTask('')
+function App() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [session, setSession] = useState<Session | null>(null)
+
+  // Al cargar la app, revisa si hay sesión
+  useEffect(() => {
+    const storedSession = localStorage.getItem('session')
+    if (storedSession) {
+      setSession(JSON.parse(storedSession))
+    }
+  }, [])
+
+  const saveSession = () => {
+    if (!name || !email) return
+
+    const newSession: Session = {
+      name,
+      email,
+      date: new Date().toLocaleString()
+    }
+
+    localStorage.setItem('session', JSON.stringify(newSession))
+    setSession(newSession)
   }
 
-  const deleteTask = (index: number) => {
-    setTasks(tasks.filter((_, i) => i !== index))
+  const logout = () => {
+    localStorage.removeItem('session')
+    setSession(null)
+    setName('')
+    setEmail('')
   }
 
   return (
     <div className="app-container">
-      <h1>Actvidades a Realizar</h1>
+      {!session ? (
+        <>
+          <h1>Iniciar Sesión</h1>
 
-      <div className="form">
-        <input
-          type="text"
-          placeholder=" Escribe los pendientes"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button onClick={addTask}>➕ Agregar</button>
-      </div>
+          <div className="form">
+            <input
+              type="text"
+              placeholder="👤 Nombre"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
 
-      <div className="list">
-        {tasks.map((t, i) => (
-          <div className="list-item" key={i}>
-            <span>📌 {t}</span>
-            <button onClick={() => deleteTask(i)}>✖</button>
+            <input
+              type="email"
+              placeholder="📧 Correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <button onClick={saveSession}>Guardar Sesión</button>
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <>
+          <h1>Sesión Activa</h1>
+
+          <div className="session-box">
+            <p><strong>👤 Nombre:</strong> {session.name}</p>
+            <p><strong>📧 Email:</strong> {session.email}</p>
+            <p><strong>🕒 Fecha:</strong> {session.date}</p>
+
+            <button className="logout" onClick={logout}>
+              Cerrar sesión
+            </button>
+          </div>
+        </>
+      )}
     </div>
   )
 }
 
-export default App;
+export default App
