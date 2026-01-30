@@ -1,0 +1,104 @@
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.kanban-fullscreen {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1a1a1a; 
+  color: white;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 0 0 40px 0;
+  font-weight: bold;
+}
+
+.kanban-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.kanban-form input {
+  background: #333;
+  border: 1px solid #444;
+  color: white;
+  padding: 12px;
+  border-radius: 4px;
+  width: 300px;
+}
+
+.kanban-form button {
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.columna {
+  padding: 25px;
+  border-radius: 15px;
+  min-height: 60vh;
+  transition: background 0.3s;
+}
+
+
+.libre { background-color: #f8f9fa; color: #333; }    
+.ocupado { background-color: #dcfce7; color: #333; }  
+.saturado { background-color: #fef9c3; color: #333; } 
+
+.columna h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tarea-card {
+  background: white;
+  color: #333;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: grab;
+}
+
+.del-btn {
+  background-color: #f87171; 
+  color: white;
+  border: none;
+  border-radius: 8px;      
+  width: 45px;             
+  height: 45px;            
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;       
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.del-btn:hover {
+  background-color: #ef4444; 
+}
