@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gestor de Notas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .App {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Estilos de estilos.css */
+        .panel {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 16px;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        .panel-separacion {
+            margin-top: 16px;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            margin-top: 6px;
+            padding: 10px;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+            font: inherit;
+        }
+
+        textarea:focus,
+        input:focus {
+            outline: none;
+            border-color: #333;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 16px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        button[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .texto-chico {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .formulario {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 16px;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+        .formulario h2 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .btn-guardar {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: white;
+            border-color: #333;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-guardar:hover {
+            background: #555;
+        }
+
+        /* Lista */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 0;
+        }
+
+        li {
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+
+        li h3 {
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+
+        li p {
+            margin: 8px 0;
+            color: #666;
+        }
+
+        .fila-acciones {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .boton-chico {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .boton-peligro {
+            border-color: red;
+            color: red;
+        }
+
+        .boton-peligro:hover {
+            background: #ffe6e6;
+        }
+
+        .lista-notas {
+            border: 1px solid #000;
+            border-radius: 12px;
+            padding: 16px;
+            background: white;
+        }
+
+        .lista-notas h2 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .sin-notas {
+            text-align: center;
+            color: #999;
+            padding: 40px 20px;
+        }
+
+        .tarjeta-nota {
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: #fafafa;
+        }
+
+        .nota-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .nota-id {
+            background: #e0e0e0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .nota-contenido {
+            margin: 8px 0;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .nota-fecha {
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .formulario,
+            .lista-notas {
+                padding: 12px;
+            }
+
+            button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
