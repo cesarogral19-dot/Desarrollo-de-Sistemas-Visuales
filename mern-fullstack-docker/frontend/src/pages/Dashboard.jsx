@@ -32,34 +32,41 @@ export default function Dashboard(){
   return (
     <div className="container fade-in">
       <div className="card">
-        <div className="header">
+        <div className="header" style={{ textAlign: 'center' }}>
           <h2>Dashboard actualizado</h2>
-          <div>
-            Bienvenido, <strong>{user?.name}</strong>
-            <br />
-            <Link to="/register" style={{ 
-              display: 'inline-block',
-              marginTop: '10px',
-              padding: '8px 12px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '4px'
-            }}>
-              + Registrar Nuevo Usuario
+          <p>Bienvenido, <strong>{user?.name}</strong></p>
+
+          {/* BOTONES CENTRADOS */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '15px',
+            marginTop: '15px'
+          }}>
+            <Link 
+              to="/login"
+              style={{ 
+                padding: '10px 18px',
+                backgroundColor: '#64748b',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px'
+              }}
+            >
+              Volver al Login
             </Link>
-         
-            <Link to="/register" style={{ 
-              display: 'inline-block',
-              marginTop: '10px',
-              padding: '8px 12px',
-              backgroundColor: '#007bff',
-              color: 'white',
-              textDecoration: 'none',
-              borderRadius: '4px',
-              fontSize: '14px'
-            }}>
-              Registrar Nuevo Usuario
+
+            <Link 
+              to="/register"
+              style={{ 
+                padding: '10px 18px',
+                backgroundColor: '#1e3a8a',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '6px'
+              }}
+            >
+              Registrar Usuario
             </Link>
           </div>
         </div>
@@ -72,7 +79,10 @@ export default function Dashboard(){
                   <li key={r._id || r.id || index}>
                     <strong>{r.title}</strong> — {r.status} — {r.amount} USD
                     {user && (user.role === 'MANAGER' || user.role === 'ADMIN') && (
-                      <button style={{ marginLeft: 8 }} onClick={() => onApprove(r._id)}>
+                      <button 
+                        style={{ marginLeft: 8 }} 
+                        onClick={() => onApprove(r._id)}
+                      >
                         Aprobar
                       </button>
                     )}

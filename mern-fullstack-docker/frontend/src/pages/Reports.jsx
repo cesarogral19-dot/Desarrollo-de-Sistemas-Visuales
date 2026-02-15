@@ -18,8 +18,8 @@ export default function Reports() {
   }, []);
 
   return (
-    <div className="container fade-in">
-      <div className="card">
+    <div className="page-reports">
+      <div className="card reports-card">
         <h2>Reporte Empresarial</h2>
 
         {loading ? (

@@ -25,4 +25,97 @@ input, textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px so
   from { opacity: 0; }
   to { opacity: 1; }
 }
+input {
+  color: #1e293b !important;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+/* REGISTER */
+.page-register {
+  background: linear-gradient(135deg, #14532d, #4ade80);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  width: 400px;
+  background: white;
+}
+
+/* ================= REGISTER ================= */
+
+.page-register {
+  background: linear-gradient(135deg, #14532d, #4ade80);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  width: 400px;
+  background: white;
+  color: #1f2937; /* Texto oscuro */
+}
+
+.register-card h2 {
+  color: #065f46;
+}
+
+.register-card label {
+  color: #065f46;
+  font-weight: 600;
+}
+
+/* ================= REPORTS ================= */
+
+.page-reports {
+  background: linear-gradient(135deg, #4c1d95, #a78bfa);
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.reports-card {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  color: #1e293b; /* Texto oscuro fuerte */
+}
+
+.reports-card h2 {
+  color: #4c1d95;
+}
+
+.reports-card li {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* ================= DASHBOARD ================= */
+
+.container.fade-in {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.card {
+  color: #1e293b;
+}
+
+/* ================= INPUT FIX GLOBAL ================= */
+
+input {
+  color: #1e293b !important;
+  background-color: #ffffff;
+}
+
+input::placeholder {
+  color: #64748b;
+}
+
 

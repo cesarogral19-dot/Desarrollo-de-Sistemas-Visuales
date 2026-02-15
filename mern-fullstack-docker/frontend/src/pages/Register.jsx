@@ -41,7 +41,6 @@ export default function Register(){
     setLoading(true)
 
     try{
-      // 🔥 CONVERTIMOS firstName + lastName → name
       const payload = {
         name: `${form.firstName} ${form.lastName}`,
         email: form.email,
@@ -63,62 +62,22 @@ export default function Register(){
   }
 
   return (
-    <div className="container">
-      <div className="card">
-        <h2 style={{ color: '#333', marginBottom: '20px' }}>
-          Crear Cuenta
-        </h2>
+    <div className="page-register">
+      <div className="card register-card">
+        <h2>Crear Cuenta</h2>
 
         <form onSubmit={onSubmit}>
-          <FormInput 
-            name="firstName" 
-            value={form.firstName} 
-            onChange={onChange} 
-            label="Nombre" 
-            error={errors.firstName} 
-          />
+          <FormInput name="firstName" value={form.firstName} onChange={onChange} label="Nombre" error={errors.firstName} />
+          <FormInput name="lastName" value={form.lastName} onChange={onChange} label="Apellido" error={errors.lastName} />
+          <FormInput name="email" value={form.email} onChange={onChange} label="Email" error={errors.email} />
+          <FormInput name="password" type="password" value={form.password} onChange={onChange} label="Contraseña" error={errors.password} />
+          <FormInput name="confirmPassword" type="password" value={form.confirmPassword} onChange={onChange} label="Confirmar Contraseña" error={errors.confirmPassword} />
 
-          <FormInput 
-            name="lastName" 
-            value={form.lastName} 
-            onChange={onChange} 
-            label="Apellido" 
-            error={errors.lastName} 
-          />
-
-          <FormInput 
-            name="email" 
-            value={form.email} 
-            onChange={onChange} 
-            label="Email" 
-            error={errors.email} 
-          />
-
-          <FormInput 
-            name="password" 
-            type="password" 
-            value={form.password} 
-            onChange={onChange} 
-            label="Contraseña" 
-            error={errors.password} 
-          />
-
-          <FormInput 
-            name="confirmPassword" 
-            type="password" 
-            value={form.confirmPassword} 
-            onChange={onChange} 
-            label="Confirmar Contraseña" 
-            error={errors.confirmPassword} 
-          />
-          
           {errors.general && (
-            <div className="error" style={{color: 'red', marginBottom: '10px'}}>
-              {errors.general}
-            </div>
+            <div className="error">{errors.general}</div>
           )}
-          
-          <button className="btn-press" disabled={loading}>
+
+          <button disabled={loading}>
             {loading ? 'Registrando...' : 'Registrarme'}
           </button>
         </form>
