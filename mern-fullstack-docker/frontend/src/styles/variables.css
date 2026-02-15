@@ -1,0 +1,11 @@
+/* Centralized palette */
+:root {
+  --color-bg: #0f1724; /* dark */
+  --color-surface: #0b1220;
+  --color-on-surface: #e6eef8;
+  --color-accent: #4f46e5; /* indigo */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --muted: #98a0b3;
+}

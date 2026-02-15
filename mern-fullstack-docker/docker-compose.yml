@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    # map the container Mongo port to 27018 on the host to avoid conflicts with existing services
+    ports:
+      - "27018:27017"
+
+  backend:
+    build: ./backend
+    ports:
+      - "5001:5001"  # Cambiamos a 5001 que es el que te funcionó
+    environment:
+      - NODE_ENV=development
+      - PORT=5001
+      - MONGO_URI=mongodb://mongo:27017/mern_db  # Usamos la que tiene 32KB de datos
+      - JWT_SECRET=tu_clave_secreta_aqui
+      - FRONTEND_URL=http://localhost:3001  # Tu puerto real de frontend
+    depends_on:
+      - mongo
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+    - VITE_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
+    driver: local

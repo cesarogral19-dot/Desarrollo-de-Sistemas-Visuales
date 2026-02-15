@@ -1,0 +1,206 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                 🚀 EJECUTAR PROYECTO MERN EN POWERSHELL                   ║
+║                                                                           ║
+║              Instrucciones para Windows PowerShell 5.1+                    ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+⚠️  IMPORTANTE: PowerShell usa ";" en lugar de "&&"
+    En PowerShell: comando1 ; comando2
+    NO usar: comando1 && comando2
+
+═══════════════════════════════════════════════════════════════════════════
+
+📌 OPCIÓN 1: USAR LOS SCRIPTS INCLUIDOS (RECOMENDADO)
+
+Este es el método más simple. Encontrarás dos scripts en la carpeta MERN-Stack-Complete:
+  • run-backend.ps1   → Inicia el servidor backend
+  • run-frontend.ps1  → Inicia el servidor frontend
+
+PASOS:
+
+1️⃣  Abre PowerShell
+    Presiona: Win + X → PowerShell (Admin) o PowerShell
+
+2️⃣  Ve a la carpeta del proyecto
+    cd "C:\Users\cesar\OneDrive\Documentos\Proyecto MERN\MERN-Stack-Complete"
+
+3️⃣  Permite ejecutar scripts (si es necesario)
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+4️⃣  Abre DOS terminals (Terminal nueva para cada una):
+
+    TERMINAL 1 - BACKEND:
+    ────────────────────
+    .\run-backend.ps1
+
+    TERMINAL 2 - FRONTEND:
+    ─────────────────────
+    .\run-frontend.ps1
+
+5️⃣  Espera a que ambos arranquen:
+    ✅ Backend: "Server running on port 5000"
+    ✅ Frontend: "http://localhost:5173"
+
+6️⃣  Abre en navegador:
+    http://localhost:5173
+
+═══════════════════════════════════════════════════════════════════════════
+
+📌 OPCIÓN 2: USANDO COMANDOS MANUALES EN POWERSHELL
+
+Si prefieres no usar scripts, aquí está el proceso manual:
+
+TERMINAL 1 - BACKEND:
+─────────────────────
+
+cd "C:\Users\cesar\OneDrive\Documentos\Proyecto MERN\MERN-Stack-Complete"
+cd backend
+npm run dev
+
+Esperado:
+✅ nodemon watching: backend\src
+✅ Server running on port 5000
+✅ Connected to MongoDB
+
+
+TERMINAL 2 - FRONTEND:
+─────────────────────
+
+cd "C:\Users\cesar\OneDrive\Documentos\Proyecto MERN\MERN-Stack-Complete"
+cd frontend
+npm install        # Solo si es la primera vez
+npm run dev
+
+Esperado:
+✅ VITE v5.0.0 ready in 234 ms
+✅ Local: http://localhost:5173/
+✅ Network: http://tu-ip:5173/
+
+═══════════════════════════════════════════════════════════════════════════
+
+🐳 OPCIÓN 3: USAR DOCKER (LA MÁS SIMPLE)
+
+Si instalaste Docker, esta es la forma más fácil:
+
+PASOS:
+
+1️⃣  Ve a la carpeta del proyecto
+    cd "C:\Users\cesar\OneDrive\Documentos\Proyecto MERN\MERN-Stack-Complete"
+
+2️⃣  Copia el archivo de configuración
+    cp .env.example .env
+
+    O manualmente: Copia el contenido de .env.example a .env
+
+3️⃣  Inicia Docker
+    docker-compose up -d
+
+    Esperado:
+    ✅ Creating mern-stack-complete_backend_1 ... done
+    ✅ Creating mern-stack-complete_frontend_1 ... done
+    ✅ Creating mern-stack-complete_mongodb_1 ... done
+
+4️⃣  Abre en navegador
+    http://localhost:3000
+
+Esto es TODO lo que necesitas hacer con Docker. Mucho más simple.
+
+═══════════════════════════════════════════════════════════════════════════
+
+✅ VERIFICAR QUE ESTÁ FUNCIONANDO
+
+Después de iniciar, verifica que todo esté bien:
+
+🔵 BACKEND (puerto 5000)
+   Abre en navegador: http://localhost:5000/api/health
+   Esperado: JSON response con { "status": "ok" }
+
+🔵 FRONTEND (puerto 5173 o 3000 con Docker)
+   Abre en navegador: http://localhost:5173
+   Esperado: Página de login del proyecto MERN
+
+🔵 BASE DE DATOS
+   Para verificar MongoDB localmente:
+   mongosh --username mernuser --password mernpassword123 --authenticationDatabase admin
+
+═══════════════════════════════════════════════════════════════════════════
+
+🆘 PROBLEMAS COMUNES
+
+P: "El error dice El token '&&' no es un separador de instrucciones válido"
+R: Estás usando bash sintaxis en PowerShell. Usa punto y coma:
+   ❌ cd backend && npm install && npm run dev
+   ✅ cd backend; npm install; npm run dev
+
+P: "Puerto 5000 ya está en uso"
+R: Otro servicio usa ese puerto.
+   Opción A: Cambiar el puerto en .env (BACKEND_PORT=5001)
+   Opción B: Detener el servicio que usa 5000
+   Opción C: netstat -ano | findstr :5000  (para ver qué lo usa)
+
+P: "npm run dev dice que nodemon no existe"
+R: Las dependencias no están instaladas correctamente.
+   Ejecuta: npm install
+
+P: "MongoDB connection refused"
+R: MongoDB no está corriendo.
+   - Con Docker: Verificar que el contenedor esté corriendo (docker ps)
+   - Local: Instalar y iniciar MongoDB
+   - Verificar credenciales en .env
+
+P: "Frontend no puede conectarse al backend"
+R: El VITE_API_BASE_URL está incorrecto.
+   Edita frontend/.env:
+   VITE_API_BASE_URL=http://localhost:5000
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 RECOMENDACIÓN FINAL
+
+👉 Si tienes Docker instalado: Usa OPCIÓN 3 (Docker)
+   Es la más simple, solo 4 comandos: cd, cp, docker-compose up -d, ¡listo!
+
+👉 Si NO tienes Docker: Usa OPCIÓN 1 (Scripts)
+   Solo ejecuta los scripts, no tienes que acordarte de comandos
+
+👉 Si eres desarrollador:Usa OPCIÓN 2 (Manual)
+   Tienes control total de qué hace cada proceso
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 PRÓXIMOS PASOS
+
+1. Elige tu opción favorita
+2. Ejecuta los comandos
+3. Cuando veas ✅ tanto en backend como frontend, ¡ya está listo!
+4. Abre http://localhost:5173 (o :3000 con Docker)
+5. ¡Comienza a usar la aplicación!
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎓 PARA DESARROLLADORES
+
+Estructura de comandos en PowerShell:
+
+# Cambiar directorio
+cd "ruta/al/directorio"
+
+# Ejecutar secuencialmente (espera a que termine la primera)
+comando1 ; comando2 ; comando3
+
+# Ejecutar background
+Start-Job { comando }
+
+# Ver status
+Get-Job
+
+# Ir a un directorio y volver
+Push-Location directorio
+... comandos ...
+Pop-Location
+
+═══════════════════════════════════════════════════════════════════════════
+
+¡HAPPY CODING! 💻✨

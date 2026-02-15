@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#f5f7fb"/>
+  <g transform="translate(40,40)">
+    <rect width="320" height="760" rx="8" fill="#fff" stroke="#e6e9ef"/>
+    <rect x="360" width="980" height="760" rx="8" fill="#fff" stroke="#e6e9ef"/>
+    <rect x="380" y="24" width="240" height="24" rx="4" fill="#eef3fb"/>
+    <rect x="380" y="70" width="760" height="150" rx="6" fill="#f3f6fb"/>
+    <rect x="380" y="240" width="760" height="360" rx="6" fill="#f3f6fb"/>
+    <text x="20" y="32" font-family="Arial" font-size="14" fill="#8b94a6">Dashboard (wireframe)</text>
+  </g>
+</svg>

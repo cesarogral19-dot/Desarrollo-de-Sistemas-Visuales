@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0F1724"/>
+  <g transform="translate(80,60)">
+    <rect width="520" height="560" rx="12" fill="#0B1220" stroke="#1f2937"/>
+    <text x="40" y="56" font-family="Inter, Arial" font-size="22" fill="#E6EEF8">Bienvenido de nuevo</text>
+    <text x="40" y="96" font-family="Inter, Arial" font-size="14" fill="#98A0B3">Inicia sesión para acceder a tu panel</text>
+    <rect x="40" y="140" width="440" height="44" rx="8" fill="#071024" stroke="#26314a"/>
+    <rect x="40" y="200" width="440" height="44" rx="8" fill="#071024" stroke="#26314a"/>
+    <button x="40" y="260" width="440" height="44" rx="8" fill="#4F46E5" />
+    <text x="70" y="294" font-family="Inter, Arial" font-size="16" fill="#fff">Entrar</text>
+  </g>
+</svg>

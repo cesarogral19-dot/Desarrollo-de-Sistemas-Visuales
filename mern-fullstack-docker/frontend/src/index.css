@@ -1,0 +1,28 @@
+@import './styles/variables.css';
+@import './styles/animations.css';
+
+:root {
+  --bg: var(--color-bg);
+  --card: var(--color-surface);
+  --text: var(--color-on-surface);
+  --accent: var(--color-accent);
+}
+
+* { box-sizing: border-box; }
+body { font-family: Inter, system-ui, Arial; margin: 0; background: var(--bg); color: var(--text); }
+.container { max-width: 1024px; margin: 32px auto; padding: 16px; }
+.card { background: var(--card); border-radius: 8px; padding: 16px; box-shadow: 0 6px 18px rgba(2,6,23,0.08); }
+button { cursor: pointer; border: none; padding: 8px 12px; border-radius: 6px; background: var(--accent); color: #fff; transition: transform .12s ease; }
+button:hover { transform: translateY(-2px); }
+input, textarea { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.08); background: transparent; color: var(--text); }
+.form-row { margin-bottom: 12px; }
+.error { color: #b00020; font-size: 0.9rem; }
+.header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:12px; }
+.nav { display:flex; gap:8px; }
+.logo { display:flex; gap:8px; align-items:center; font-weight:600; }
+.loading { display:inline-block; vertical-align:middle; }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

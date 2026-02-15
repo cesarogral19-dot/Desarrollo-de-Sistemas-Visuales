@@ -1,0 +1,107 @@
+/* Estilos para página Reportes */
+
+.reportes-page {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-gray-50);
+  min-height: 100vh;
+}
+
+.report-filters {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.report-filters .form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.status-list,
+.priority-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.status-item,
+.priority-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.status-item span:first-child,
+.priority-item span:first-child {
+  min-width: 100px;
+  text-transform: capitalize;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: var(--color-gray-200);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-full);
+  transition: width var(--transition-base);
+}
+
+.progress.pending {
+  background-color: var(--color-warning);
+}
+
+.progress.approved {
+  background-color: var(--color-success);
+}
+
+.progress.rejected {
+  background-color: var(--color-danger);
+}
+
+.progress.completed {
+  background-color: var(--color-success);
+}
+
+.status-item .count,
+.priority-item .count {
+  min-width: 40px;
+  text-align: right;
+  font-weight: var(--font-weight-semibold);
+}
+
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.type-card {
+  background-color: var(--color-gray-100);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+
+.type-name {
+  margin: 0;
+  color: var(--color-gray-700);
+  text-transform: capitalize;
+}
+
+.type-count {
+  margin: var(--spacing-sm) 0 0 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .report-filters .form-row {
+    grid-template-columns: 1fr;
+  }
+}

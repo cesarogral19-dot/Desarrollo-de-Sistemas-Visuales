@@ -1,0 +1,103 @@
+/* Estilos para página Admin */
+
+.admin-page {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-gray-50);
+  min-height: 100vh;
+}
+
+.admin-section {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.admin-section h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-gray-200);
+  padding-bottom: var(--spacing-md);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-lg);
+}
+
+.admin-table thead {
+  background-color: var(--color-gray-100);
+}
+
+.admin-table th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.admin-table td {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.admin-table tbody tr:hover {
+  background-color: var(--color-gray-50);
+}
+
+.role-select {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--border-radius-md);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.status-active {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.status-inactive {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.status-suspended {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+@media (max-width: 768px) {
+  .admin-table {
+    font-size: var(--font-size-sm);
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: var(--spacing-sm);
+  }
+
+  .admin-table .btn {
+    padding: 4px 8px;
+    font-size: var(--font-size-xs);
+  }
+}

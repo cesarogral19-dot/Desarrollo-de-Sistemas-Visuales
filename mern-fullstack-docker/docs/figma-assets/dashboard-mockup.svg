@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#0F1724"/>
+  <g transform="translate(40,40)">
+    <rect width="320" height="760" rx="12" fill="#0B1220" stroke="#1f2937"/>
+    <rect x="360" width="980" height="760" rx="12" fill="#0B1220" stroke="#1f2937"/>
+    <text x="380" y="40" font-family="Inter, Arial" font-size="20" fill="#E6EEF8">Resumen</text>
+    <rect x="380" y="80" width="340" height="120" rx="10" fill="#071024" stroke="#26314a"/>
+    <rect x="740" y="80" width="400" height="120" rx="10" fill="#071024" stroke="#26314a"/>
+    <rect x="380" y="220" width="760" height="360" rx="10" fill="#071024" stroke="#26314a"/>
+    <text x="380" y="260" font-family="Inter, Arial" font-size="14" fill="#98A0B3">Lista de solicitudes recientes</text>
+  </g>
+</svg>

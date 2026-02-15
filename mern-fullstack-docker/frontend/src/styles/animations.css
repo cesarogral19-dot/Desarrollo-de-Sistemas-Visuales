@@ -1,0 +1,11 @@
+/* Small animation utilities */
+@keyframes pulse { 0% { transform: scale(.98); opacity:.9 } 50% { transform: scale(1.02); opacity:1 } 100% { transform: scale(.98); opacity:.9 } }
+.fade-in { animation: fadeIn .28s ease both; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform:none }}
+.btn-press:active { transform: translateY(1px) scale(.998); }
+.spinner { width:18px; height:18px; border-radius:50%; border:3px solid rgba(255,255,255,0.08); border-top-color:var(--accent); animation:spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* keydown / input press feedback */
+.input-press { transform: translateY(1px) scale(.995); box-shadow: 0 6px 18px rgba(2,6,23,0.12); transition: transform .12s ease; }
+.btn-press.keydown { transform: translateY(1px) scale(.99); transition: transform .12s ease; }

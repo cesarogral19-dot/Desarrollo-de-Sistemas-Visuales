@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0F1724"/>
+  <g transform="translate(80,60)">
+    <rect width="620" height="600" rx="12" fill="#0B1220" stroke="#1f2937"/>
+    <text x="40" y="56" font-family="Inter, Arial" font-size="22" fill="#E6EEF8">Crea tu cuenta</text>
+    <text x="40" y="96" font-family="Inter, Arial" font-size="14" fill="#98A0B3">Regístrate y empieza a usar la plataforma</text>
+    <rect x="40" y="140" width="540" height="44" rx="8" fill="#071024" stroke="#26314a"/>
+    <rect x="40" y="200" width="540" height="44" rx="8" fill="#071024" stroke="#26314a"/>
+    <rect x="40" y="260" width="540" height="44" rx="8" fill="#071024" stroke="#26314a"/>
+    <button x="40" y="330" width="540" height="44" rx="8" fill="#4F46E5" />
+    <text x="70" y="364" font-family="Inter, Arial" font-size="16" fill="#fff">Registrarme</text>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f5f7fb"/>
+  <g transform="translate(80,60)">
+    <rect width="620" height="600" rx="10" fill="#fff" stroke="#e6e9ef"/>
+    <rect x="40" y="40" width="540" height="28" rx="4" fill="#e9eef6"/>
+    <rect x="40" y="110" width="540" height="44" rx="6" fill="#f3f6fb"/>
+    <rect x="40" y="170" width="540" height="44" rx="6" fill="#f3f6fb"/>
+    <rect x="40" y="230" width="540" height="44" rx="6" fill="#f3f6fb"/>
+    <rect x="40" y="310" width="540" height="44" rx="6" fill="#e9eef6"/>
+    <text x="60" y="24" font-family="Arial" font-size="18" fill="#8b94a6">Registro (wireframe)</text>
+  </g>
+</svg>

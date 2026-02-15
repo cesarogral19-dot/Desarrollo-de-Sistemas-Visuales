@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0F1724"/>
+  <g transform="translate(60,60)">
+    <rect width="1080" height="600" rx="12" fill="#0B1220" stroke="#1f2937"/>
+    <text x="80" y="96" font-family="Inter, Arial" font-size="20" fill="#E6EEF8">Reportes — Exportar PDF</text>
+    <rect x="80" y="140" width="300" height="44" rx="8" fill="#4F46E5"/>
+    <text x="110" y="172" font-family="Inter, Arial" font-size="14" fill="#fff">Exportar PDF</text>
+    <rect x="80" y="220" width="1000" height="360" rx="8" fill="#071024" stroke="#26314a"/>
+    <text x="100" y="260" font-family="Inter, Arial" font-size="14" fill="#98A0B3">Previsualización de datos / filtros</text>
+  </g>
+</svg>

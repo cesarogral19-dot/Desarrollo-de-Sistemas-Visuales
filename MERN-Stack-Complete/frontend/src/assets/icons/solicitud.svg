@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Ícono de Solicitud/Ticket -->
+  <rect x="10" y="10" width="80" height="80" rx="5" fill="#2563eb" opacity="0.1"/>
+  <rect x="15" y="15" width="70" height="70" rx="3" fill="none" stroke="#2563eb" stroke-width="2"/>
+  
+  <!-- Líneas de texto -->
+  <line x1="25" y1="30" x2="75" y2="30" stroke="#2563eb" stroke-width="2"/>
+  <line x1="25" y1="45" x2="75" y2="45" stroke="#2563eb" stroke-width="1.5" opacity="0.7"/>
+  <line x1="25" y1="55" x2="65" y2="55" stroke="#2563eb" stroke-width="1.5" opacity="0.7"/>
+  <line x1="25" y1="65" x2="60" y2="65" stroke="#2563eb" stroke-width="1.5" opacity="0.7"/>
+  
+  <!-- Checkbox -->
+  <circle cx="70" cy="70" r="8" fill="none" stroke="#10b981" stroke-width="2"/>
+  <line x1="66" y1="70" x2="68" y2="73" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <line x1="68" y1="73" x2="74" y2="65" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#f5f7fb"/>
+  <g transform="translate(60,60)">
+    <rect width="1080" height="600" rx="8" fill="#fff" stroke="#e6e9ef"/>
+    <rect x="40" y="40" width="1000" height="40" rx="6" fill="#eef3fb"/>
+    <rect x="40" y="110" width="1000" height="120" rx="6" fill="#f3f6fb"/>
+    <rect x="40" y="250" width="480" height="44" rx="6" fill="#f3f6fb"/>
+    <rect x="560" y="250" width="480" height="44" rx="6" fill="#f3f6fb"/>
+    <rect x="40" y="320" width="1000" height="44" rx="6" fill="#e9eef6"/>
+    <text x="60" y="24" font-family="Arial" font-size="18" fill="#8b94a6">Solicitud (wireframe)</text>
+  </g>
+</svg>
